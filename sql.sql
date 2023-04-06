@@ -11,7 +11,7 @@ create table if not exists List_of_artists (
 
 create table if not exists List_of_tracks(
 	track_id serial primary key,
-	album_id INTEGER not null references List_of_albums(album_id)x, 
+	album_id INTEGER not null references List_of_albums(album_id), 
 	name text,
 	duration integer
 );
