@@ -9,6 +9,13 @@ create table if not exists List_of_artists (
 	name text
 );
 
+
+create table if not exists List_of_albums (
+	album_id serial primary key,
+	year integer,
+	name text
+);
+
 create table if not exists List_of_tracks(
 	track_id serial primary key,
 	album_id INTEGER not null references List_of_albums(album_id), 
@@ -16,16 +23,11 @@ create table if not exists List_of_tracks(
 	duration integer
 );
 
-create table if not exists List_of_albums (
-	album_id serial primary key,
-	year date,
-	name text
-);
 
 create table if not exists List_of_compilations (
 	compilation_id serial primary key,
 	name text,
-	year date
+	year integer
 );
 
 create table if not exists GenreArtist (
